@@ -3,16 +3,15 @@
 import { motion } from "framer-motion"
 
 const techCompanies = [
-  { name: "Google", abbrev: "G" },
-  { name: "Meta", abbrev: "M" },
-  { name: "Amazon", abbrev: "A" },
-  { name: "Microsoft", abbrev: "MS" },
-  { name: "Apple", abbrev: "A" },
-  { name: "Netflix", abbrev: "N" },
-  { name: "Stripe", abbrev: "S" },
-  { name: "Uber", abbrev: "U" },
-  { name: "Airbnb", abbrev: "Ab" },
-  { name: "Spotify", abbrev: "Sp" },
+  { name: "Google", slug: "google" },
+  { name: "Meta", slug: "meta" },
+  { name: "Coinbase", slug: "coinbase" },
+  { name: "Apple", slug: "apple" },
+  { name: "Netflix", slug: "netflix" },
+  { name: "Stripe", slug: "stripe" },
+  { name: "Uber", slug: "uber" },
+  { name: "Airbnb", slug: "airbnb" },
+  { name: "Spotify", slug: "spotify" },
 ]
 
 export function LogoMarquee() {
@@ -31,7 +30,13 @@ export function LogoMarquee() {
               whileHover={{ scale: 1.05 }}
             >
               <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-white shadow-sm">
-                <span className="text-sm font-bold text-muted-foreground">{company.abbrev}</span>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`https://cdn.simpleicons.org/${company.slug}`}
+                  alt={company.name}
+                  width={20}
+                  height={20}
+                />
               </div>
               <span className="text-sm font-medium text-muted-foreground whitespace-nowrap">{company.name}</span>
             </motion.div>

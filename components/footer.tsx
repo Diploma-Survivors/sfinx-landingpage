@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { Github, Twitter, Linkedin } from "lucide-react"
 import { FadeIn } from "@/components/motion-wrapper"
 import { motion } from "framer-motion"
@@ -43,10 +44,8 @@ export function Footer() {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
             <div className="lg:col-span-2">
               <Link href="/" className="flex items-center gap-2 group">
-                <span className="text-xl font-bold tracking-tight text-foreground">sfinx</span>
-                <span className="rounded-md bg-accent px-1.5 py-0.5 text-xs font-semibold text-accent-foreground group-hover:bg-accent/90 transition-colors">
-                  OJ
-                </span>
+                <Image src="/logo.svg" alt="SfinX" width={32} height={32} />
+                <span className="text-xl font-bold tracking-tight text-foreground">SfinX</span>
               </Link>
               <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
                 The rigorous online judge for developers who demand excellence. Pass the challenge. Prove your skill.
@@ -93,7 +92,7 @@ export function Footer() {
 
         <div className="mt-12 border-t border-border/60 pt-8">
           <p className="text-center text-xs text-muted-foreground">
-            © {new Date().getFullYear()} sfinx OJ. All rights reserved.
+            © {new Date().getFullYear()} SfinX OJ. All rights reserved.
           </p>
         </div>
       </div>

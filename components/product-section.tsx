@@ -47,7 +47,7 @@ export function ProductSection() {
         <FadeIn>
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-              What is <span className="gradient-text">sfinx OJ</span>?
+              What is <span className="gradient-text">SfinX OJ</span>?
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
               An AI-powered Online Judge with real-time interview capabilities

@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
@@ -27,10 +28,8 @@ export function Header() {
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-8">
           <Link href="/" className="flex items-center gap-2 group">
-            <span className="text-xl font-bold tracking-tight text-foreground">sfinx</span>
-            <span className="rounded-md bg-accent px-1.5 py-0.5 text-xs font-semibold text-accent-foreground group-hover:bg-accent/90 transition-colors">
-              OJ
-            </span>
+            <Image src="/logo.svg" alt="SfinX" width={32} height={32} priority />
+            <span className="text-xl font-bold tracking-tight text-accent">SfinX</span>
           </Link>
 
           <div className="hidden md:flex md:items-center md:gap-1">
@@ -48,8 +47,13 @@ export function Header() {
 
         <div className="hidden md:flex md:items-center md:gap-4">
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-            <Button className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-md shadow-accent/15 hover:shadow-lg hover:shadow-accent/25 transition-all duration-300">
-              Get Started
+            <Button
+              className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-md shadow-accent/15 hover:shadow-lg hover:shadow-accent/25 transition-all duration-300"
+              asChild
+            >
+              <a href="https://app.sfinx.cloud" target="_blank" rel="noopener noreferrer">
+                Get Started
+              </a>
             </Button>
           </motion.div>
         </div>

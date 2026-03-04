@@ -48,7 +48,7 @@ export function SolutionSection() {
         <FadeIn>
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-              How sfinx <span className="gradient-text">Solves</span> Modern Assessment Problems
+              How SfinX <span className="gradient-text">Solves</span> Modern Assessment Problems
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
               Built to address the shortcomings of traditional coding platforms

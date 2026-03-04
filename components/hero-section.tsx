@@ -70,21 +70,14 @@ export function HeroSection() {
                 <Button
                   size="lg"
                   className="relative overflow-hidden bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30 transition-all duration-300 px-8"
+                  asChild
                 >
-                  <span className="relative z-10 flex items-center gap-2">
-                    Start the Challenge
-                    <ArrowRight className="h-4 w-4" />
-                  </span>
-                </Button>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-border hover:border-accent/50 hover:bg-accent/5 transition-all bg-white/50 px-8"
-                >
-                  <FileText className="mr-2 h-4 w-4" />
-                  View Documentation
+                  <a href="https://app.sfinx.cloud" target="_blank" rel="noopener noreferrer">
+                    <span className="relative z-10 flex items-center gap-2">
+                      Start the Challenge
+                      <ArrowRight className="h-4 w-4" />
+                    </span>
+                  </a>
                 </Button>
               </motion.div>
             </div>

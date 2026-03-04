@@ -7,28 +7,28 @@ import { motion } from "framer-motion"
 const comparisons = [
   {
     feature: "AI-Powered Evaluation",
-    sfinx: true,
+    SfinX: true,
     traditional: false,
     icon: Brain,
     description: "Intelligent code analysis beyond test cases",
   },
   {
     feature: "Real Interview Simulation",
-    sfinx: true,
+    SfinX: true,
     traditional: false,
     icon: Zap,
     description: "Live 1:1 sessions with AI interviewer",
   },
   {
     feature: "Instant Feedback",
-    sfinx: true,
+    SfinX: true,
     traditional: false,
     icon: Clock,
     description: "Get results in under 2 seconds",
   },
   {
     feature: "Edge-Case Analysis",
-    sfinx: true,
+    SfinX: true,
     traditional: false,
     icon: Shield,
     description: "Comprehensive boundary testing",
@@ -46,7 +46,7 @@ export function CompareSection() {
         <FadeIn>
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-              sfinx vs <span className="text-muted-foreground">Traditional</span>
+              SfinX vs <span className="text-muted-foreground">Traditional</span>
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">See the difference at a glance</p>
           </div>
@@ -54,7 +54,7 @@ export function CompareSection() {
 
         {/* Visual comparison cards */}
         <div className="mt-16 grid gap-6 lg:grid-cols-2">
-          {/* sfinx Column */}
+          {/* SfinX Column */}
           <FadeIn delay={0.1}>
             <div className="relative overflow-hidden rounded-2xl border border-accent/30 bg-gradient-to-b from-accent/10 to-white p-8">
               {/* Glow effect */}
@@ -62,7 +62,7 @@ export function CompareSection() {
 
               <div className="relative">
                 <div className="flex items-center gap-3 mb-8">
-                  <span className="text-2xl font-bold text-foreground">sfinx</span>
+                  <span className="text-2xl font-bold text-foreground">SfinX</span>
                   <span className="rounded-md bg-accent px-2 py-0.5 text-xs font-semibold text-accent-foreground">
                     OJ
                   </span>
@@ -136,10 +136,10 @@ export function CompareSection() {
           <div className="mt-12 rounded-2xl border border-border bg-white p-8 shadow-sm">
             <h3 className="text-lg font-semibold text-foreground mb-6 text-center">Evaluation Speed Comparison</h3>
             <div className="space-y-6">
-              {/* sfinx bar */}
+              {/* SfinX bar */}
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-medium text-foreground">sfinx OJ</span>
+                  <span className="text-sm font-medium text-foreground">SfinX OJ</span>
                   <span className="text-sm text-accent">&lt;2 seconds</span>
                 </div>
                 <div className="h-3 rounded-full bg-secondary overflow-hidden">
