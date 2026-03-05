@@ -5,11 +5,9 @@ import { ArrowRight } from "lucide-react"
 
 export function CtaSection() {
   return (
-    <section className="relative overflow-hidden py-28 sm:py-36">
-      {/* Dark background */}
-      <div className="absolute inset-0 -z-10 bg-foreground" />
+    <section className="relative overflow-hidden py-28 sm:py-36 bg-foreground">
       {/* Subtle glow */}
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[600px] rounded-full bg-accent/15 blur-[140px] -z-10" />
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[600px] rounded-full bg-accent/15 blur-[140px]" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <FadeIn>
