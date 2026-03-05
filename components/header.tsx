@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -17,6 +17,29 @@ const navItems = [
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState<string>("")
+
+  useEffect(() => {
+    const sectionIds = navItems.map((item) => item.href.slice(1))
+    const observers = sectionIds
+      .map((id) => {
+        const el = document.getElementById(id)
+        if (!el) return null
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) setActiveSection(id)
+            })
+          },
+          { rootMargin: "-20% 0px -70% 0px", threshold: 0 }
+        )
+        observer.observe(el)
+        return observer
+      })
+      .filter(Boolean) as IntersectionObserver[]
+
+    return () => observers.forEach((obs) => obs.disconnect())
+  }, [])
 
   return (
     <motion.header
@@ -33,15 +56,26 @@ export function Header() {
           </Link>
 
           <div className="hidden md:flex md:items-center md:gap-1">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="relative px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground rounded-lg hover:bg-secondary"
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const isActive = activeSection === item.href.slice(1)
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`relative px-3 py-2 text-sm font-medium transition-colors rounded-lg hover:bg-secondary ${
+                    isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {item.name}
+                  {isActive && (
+                    <motion.span
+                      layoutId="active-nav-indicator"
+                      className="absolute inset-x-3 bottom-0.5 h-0.5 rounded-full bg-accent"
+                    />
+                  )}
+                </Link>
+              )
+            })}
           </div>
         </div>
 

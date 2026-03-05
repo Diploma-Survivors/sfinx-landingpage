@@ -42,15 +42,23 @@ function CountUp({ target, prefix = "", suffix = "" }: { target: number; prefix?
 
 export function StatsBar() {
   return (
-    <section className="border-y border-border/40 bg-foreground/[0.03] py-10">
+    <section className="border-y border-border/40 bg-foreground/[0.02] py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+        <div className="grid grid-cols-2 md:grid-cols-4">
           {stats.map((stat, i) => (
-            <div key={i} className="flex flex-col items-center text-center">
-              <div className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            <div
+              key={i}
+              className={`flex flex-col items-center text-center px-6 py-4 ${
+                i < stats.length - 1 ? "md:border-r md:border-border/40" : ""
+              }`}
+            >
+              <div className="mb-3 h-0.5 w-8 rounded-full bg-accent/50" />
+              <div className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl tabular-nums">
                 <CountUp target={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
               </div>
-              <p className="mt-1 text-sm text-muted-foreground">{stat.label}</p>
+              <p className="mt-2 text-xs font-medium tracking-wide uppercase text-muted-foreground">
+                {stat.label}
+              </p>
             </div>
           ))}
         </div>

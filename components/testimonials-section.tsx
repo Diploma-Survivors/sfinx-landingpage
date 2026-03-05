@@ -39,7 +39,10 @@ export function TestimonialsSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+            <p className="text-xs font-semibold tracking-[0.15em] uppercase text-accent mb-4">
+              What developers say
+            </p>
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               Developers who made it
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">

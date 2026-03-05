@@ -40,12 +40,15 @@ const faqs = [
 
 export function FaqSection() {
   return (
-    <section className="relative py-28 sm:py-36">
+    <section className="relative py-28 sm:py-36 bg-secondary/20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <FadeIn>
             <div className="text-center">
-              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+              <p className="text-xs font-semibold tracking-[0.15em] uppercase text-accent mb-4">
+                Common questions
+              </p>
+              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
                 Frequently asked
               </h2>
               <p className="mt-4 text-lg text-muted-foreground">

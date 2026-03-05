@@ -81,7 +81,10 @@ export function CompareSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+            <p className="text-xs font-semibold tracking-[0.15em] uppercase text-accent mb-4">
+              The comparison
+            </p>
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               SfinX vs <span className="text-muted-foreground">Traditional</span>
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">See the difference at a glance</p>
