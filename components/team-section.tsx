@@ -26,15 +26,18 @@ export function TeamSection() {
             </motion.div>
 
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-              <span className="gradient-text">Diploma Survivors</span>
+              Built by engineers{" "}
+              <span className="gradient-text">who&apos;ve been there</span>
             </h2>
 
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-              A team of passionate young developers committed to redefining how programming skills are assessed. We've
-              been through the trenches — rigorous coursework, demanding projects, and countless hours of debugging.
+              We&apos;ve sat through the same grueling technical interviews, wrestled with vague feedback from traditional
+              judges, and wondered if our code was actually good — or just passing test cases.
             </p>
 
-            <p className="mt-4 text-lg text-foreground/80">Now we're building the platform we wish we had.</p>
+            <p className="mt-4 text-lg text-foreground/80">
+              SfinX is the platform we needed. We&apos;re building it in the open.
+            </p>
 
             {/* Social links */}
             <div className="mt-10 flex items-center justify-center gap-4">

@@ -1,37 +1,73 @@
 "use client"
 
-import { Check, X, Zap, Clock, Brain, Shield } from "lucide-react"
+import { Check, X, Zap, Clock, Brain, Shield, Code, BarChart2, AlertTriangle, BookOpen } from "lucide-react"
 import { FadeIn } from "@/components/motion-wrapper"
 import { motion } from "framer-motion"
 
 const comparisons = [
   {
-    feature: "AI-Powered Evaluation",
+    feature: "AI-Powered Code Evaluation",
     SfinX: true,
     traditional: false,
+    traditionalLabel: "Not available",
     icon: Brain,
-    description: "Intelligent code analysis beyond test cases",
-  },
-  {
-    feature: "Real Interview Simulation",
-    SfinX: true,
-    traditional: false,
-    icon: Zap,
-    description: "Live 1:1 sessions with AI interviewer",
-  },
-  {
-    feature: "Instant Feedback",
-    SfinX: true,
-    traditional: false,
-    icon: Clock,
-    description: "Get results in under 2 seconds",
+    description: "Intelligent analysis beyond pass/fail",
   },
   {
     feature: "Edge-Case Analysis",
     SfinX: true,
     traditional: false,
+    traditionalLabel: "Not available",
     icon: Shield,
     description: "Comprehensive boundary testing",
+  },
+  {
+    feature: "Interview Simulation",
+    SfinX: true,
+    traditional: false,
+    traditionalLabel: "Not available",
+    icon: Zap,
+    description: "Live 1:1 sessions with AI interviewer",
+  },
+  {
+    feature: "Instant Feedback (<2s)",
+    SfinX: true,
+    traditional: false,
+    traditionalLabel: "10–30 seconds",
+    icon: Clock,
+    description: "Evaluation results under 2 seconds",
+  },
+  {
+    feature: "Code Style & Best Practices",
+    SfinX: true,
+    traditional: false,
+    traditionalLabel: "Not available",
+    icon: Code,
+    description: "Actionable style and idiomatic feedback",
+  },
+  {
+    feature: "Performance Profiling",
+    SfinX: true,
+    traditional: false,
+    traditionalLabel: "Basic only",
+    icon: BarChart2,
+    description: "Time and space complexity breakdown",
+  },
+  {
+    feature: "Plagiarism Detection",
+    SfinX: true,
+    traditional: false,
+    traditionalLabel: "Limited",
+    icon: AlertTriangle,
+    description: "Protects integrity of assessments",
+  },
+  {
+    feature: "Problem Archive",
+    SfinX: true,
+    traditional: true,
+    traditionalLabel: "Available",
+    icon: BookOpen,
+    description: "Broad library of practice problems",
   },
 ]
 
@@ -107,9 +143,9 @@ export function CompareSection() {
                   {comparisons.map((item, index) => (
                     <motion.div
                       key={item.feature}
-                      className="flex items-start gap-4 p-4 rounded-xl bg-secondary/50 border border-border/40 opacity-60"
+                      className={`flex items-start gap-4 p-4 rounded-xl bg-secondary/50 border border-border/40 ${item.traditional ? "" : "opacity-60"}`}
                       initial={{ opacity: 0, x: 20 }}
-                      whileInView={{ opacity: 0.6, x: 0 }}
+                      whileInView={{ opacity: item.traditional ? 1 : 0.6, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.1 }}
                     >
@@ -121,7 +157,7 @@ export function CompareSection() {
                           <item.icon className="h-4 w-4 text-muted-foreground/50" />
                           <span className="font-semibold text-muted-foreground">{item.feature}</span>
                         </div>
-                        <p className="mt-1 text-sm text-muted-foreground/60">Not available</p>
+                        <p className="mt-1 text-sm text-muted-foreground/60">{item.traditionalLabel}</p>
                       </div>
                     </motion.div>
                   ))}
